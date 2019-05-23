@@ -30,7 +30,8 @@ function setup() {
   // Create a new Style Transfer method with a defined style.
   // We give the video as the second argument
  // style = ml5.styleTransfer('models/udnie', video, modelLoaded);
-  style = ml5.styleTransfer('models/00elafiche', video, modelLoaded);
+  style = ml5.styleTransfer('models/00-afiche', video, modelLoaded);
+  style = ml5.styleTransfer('models/01-arbol-de-la-vida', video, modelLoaded);
 }
 
 function draw(){
