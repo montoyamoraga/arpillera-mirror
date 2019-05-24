@@ -2,8 +2,21 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <style> body {padding: 0; margin: 0;} </style>
-    <title>TODO</title>
+    <title>Espejo de arpilleras</title>
+
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      #divsContainer {
+        text-align:center;
+      }
+      #imgContainer, #canvasContainer {
+        display:inline;
+      }
+    </style>
+
     <script src="./libraries/p5.min.js"></script>
     <script src="./libraries/p5.dom.min.js"></script>
     <script src="./libraries/ml5.min.js"></script>
@@ -11,13 +24,30 @@
   </head>
   <body>
 
-    <h1>Espejo de arpilleras</h1>
+    <h1>Arpillera mirror</h1>
+
+    <p>Spacebar for toggling on/off.</p>
+
+    <p>Numbers 1-9 for selecting different arpilleras.</p>
 
     <button id="startStop">Start</button>
 
-    <p id='status'>Cargando modelo...</p>
+    <p id='status'>Loading model</p>
+
+
+
+    <div id="divsContainer">
+
+      <div id="imgContainer">
+        <img src="images/00-afiche.jpg"/>
+      </div>
+
+      <div id="canvasContainer"></div>
+
+    </div>
+
     <!-- <img src="images/udnie.jpg"/> -->
-    <img src="images/00-afiche.jpg"/>
+
     <!-- <img src="images/01-arbol-de-la-vida.jpg"/> -->
     <!-- <img src="images/02-contra-la-guerra.jpg"/> -->
     <!-- <img src="images/TODO.jpg"/> -->
@@ -27,7 +57,7 @@
     <!-- <img src="images/TODO.jpg"/> -->
     <!-- <img src="images/TODO.jpg"/> -->
     <!-- <img src="images/TODO.jpg"/> -->
-    <div id="canvasContainer"></div>
+
     <br />
 
   </body>
