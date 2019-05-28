@@ -9,12 +9,16 @@
         padding: 0;
         margin: 0;
       }
-      #divsContainer {
+      /* #divsContainer {
         text-align:center;
-      }
-      #imgContainer, #canvasContainer {
+      } */
+      /* #imgContainer, #canvasContainer {
         display:inline;
-      }
+      } */
+      /* div {
+        background-image:url(images/00-afiche.jpg);
+        background-repeat:round;
+      } */
     </style>
 
     <script src="./libraries/p5.min.js"></script>
@@ -22,7 +26,8 @@
     <script src="./libraries/ml5.min.js"></script>
     <script src="./js/sketch.js"></script>
   </head>
-  <body>
+  <body style="background-image:url(images/00-afiche.jpg)" id="body">
+  <!-- <body> -->
 
     <h1>Arpillera mirror</h1>
 
@@ -34,11 +39,9 @@
 
     <p id='status'>Loading model</p>
 
-    <div id="divsContainer">
+    <!-- <div id="divsContainer"> -->
 
-      <div id="canvasContainer"></div>
-
-      <div id="imgContainer">
+      <!-- <div id="imgContainer">
         <img src="images/00-afiche.jpg" id="img0" />
         <img src="images/01-arbol-de-la-vida.jpg" id="img1" />
         <img src="images/02-contra-la-guerra.jpg" id="img2" />
@@ -47,10 +50,13 @@
         <img src="images/05-el-hombre.jpg" id="img5" />
         <img src="images/06-la-cantante-calva.jpg" id="img6" />
         <img src="images/07-la-cueca.jpg" id="img7" />
+        <img src="images/08-thiago-de-mello.jpg" id="img8" />
+      </div> -->
+
+      <div id="canvasContainer">
       </div>
 
-
-    </div>
+    <!-- </div> -->
 
   </body>
 </html>

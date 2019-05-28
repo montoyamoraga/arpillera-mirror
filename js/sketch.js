@@ -2,10 +2,19 @@
 // variables for images
 let imagesPrefix = "images/";
 let imagesSuffix = ".jpg";
+
+// TODO: less duplicate variables
+let imagesOriginalNames = ["00-afiche", "01-arbol-de-la-vida",
+                  "02-contra-la-guerra", "03-cristo-en-bikini",
+                  "04-el-circo", "05-el-hombre",
+                  "06-la-cantante-calva", "07-la-cueca",
+                  "08-thiago-de-mello"];
+
 let imagesNames = ["00-afiche", "01-arbol-de-la-vida",
                   "02-contra-la-guerra", "03-cristo-en-bikini",
                   "04-el-circo", "05-el-hombre",
-                  "06-la-cantante-calva", "07-la-cueca"];
+                  "06-la-cantante-calva", "07-la-cueca",
+                  "08-thiago-de-mello"];
 
 // add prefix and suffix to image names
 for (let i = 0; i < imagesNames.length; i++) {
@@ -17,7 +26,8 @@ let stylesPrefix = "models/";
 let stylesNames = ["00-afiche", "01-arbol-de-la-vida",
                   "02-contra-la-guerra", "03-cristo-en-bikini",
                   "04-el-circo", "05-el-hombre",
-                  "06-la-cantante-calva", "07-la-cueca"];
+                  "06-la-cantante-calva", "07-la-cueca",
+                  "08-thiago-de-mello"];
 
 // add prefix  to model names
 for (let i = 0; i < stylesNames.length; i++) {
@@ -32,6 +42,9 @@ let isTransferring = false;
 let resultImg = null;
 
 let currentModel = 0;
+
+// variable for storing body
+let body = null;
 
 // array for storing images
 let images = [];
@@ -65,15 +78,18 @@ function setup() {
   }
 
   // hide all pictures except for 0th:
-  for (let i = 1; i < images.length; i++) {
-    images[i].hidden = true;
-  }
+  // for (let i = 1; i < images.length; i++) {
+  //   images[i].hidden = true;
+  // }
 
   // Create a new Style Transfer method with a defined style.
   // We give the video as the second argument
  // style = ml5.styleTransfer('models/udnie', video, modelLoaded);
 
   // style = ml5.styleTransfer('models/02-contra-la-guerra', video, modelLoaded);
+
+  body = document.getElementById("body");
+
 }
 
 function draw(){
@@ -130,11 +146,19 @@ function keyPressed() {
   if (numberKey >= 1 && numberKey <=8) {
     // update currentModel
     currentModel = numberKey - 1;
+
+    let auxText = "background-image:url(images/" + imagesOriginalNames[currentModel] + ".jpg)"
+
+    body.style = auxText;
+
     //update image, hide all and only make one visible
-    for (let i = 0; i < images.length; i++) {
-      images[i].hidden = true;
-    }
-    images[currentModel].hidden = false;
+    // for (let i = 0; i < images.length; i++) {
+    //   images[i].hidden = true;
+    // }
+    // images[currentModel].hidden = false;
+
+
+
   }
   // TODO: retrieve spacebar to toggle style transfer
   if (keyCode == " ") {
