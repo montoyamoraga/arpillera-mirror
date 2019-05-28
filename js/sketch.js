@@ -1,13 +1,40 @@
 
-// This software is released under the MIT License.
-// https://opensource.org/licenses/MIT
+// variables for images
+let imagesPrefix = "images/";
+let imagesSuffix = ".jpg";
+let imagesNames = ["00-afiche", "01-arbol-de-la-vida",
+                  "02-contra-la-guerra", "03-cristo-en-bikini",
+                  "04-el-circo", "05-el-hombre",
+                  "06-la-cantante-calva", "07-la-cueca"];
 
+// add prefix and suffix to image names
+for (let i = 0; i < imagesNames.length; i++) {
+  imagesNames[i] = imagesPrefix + imagesNames[i] + imagesSuffix;
+}
+
+// variables for styles
+let stylesPrefix = "models/";
+let stylesNames = ["00-afiche", "01-arbol-de-la-vida",
+                  "02-contra-la-guerra", "03-cristo-en-bikini",
+                  "04-el-circo", "05-el-hombre",
+                  "06-la-cantante-calva", "07-la-cueca"];
+
+// add prefix  to model names
+for (let i = 0; i < stylesNames.length; i++) {
+  stylesNames[i] = stylesPrefix + stylesNames[i];
+}
+
+// variable for holding styles
 let styles = [];
+
 let video = null;
 let isTransferring = false;
 let resultImg = null;
 
 let currentModel = 0;
+
+// array for storing images
+let images = [];
 
 // p5.js function
 function setup() {
@@ -27,23 +54,20 @@ function setup() {
   // The button to start and stop the transfer process
   select('#startStop').mousePressed(startStop);
 
-  styles[0] = ml5.styleTransfer('models/00-afiche', video, modelLoaded);
+  // load models
+  for (let i = 0; i< stylesNames.length; i++) {
+    styles.push(ml5.styleTransfer(stylesNames[i], video, modelLoaded));
+  }
 
-  styles[1] = ml5.styleTransfer('models/01-arbol-de-la-vida', video, modelLoaded);
+  // retrieve all images
+  for (let i = 0; i < imagesNames.length; i++) {
+    images.push(document.getElementById("img" + i));
+  }
 
-  styles[2] = ml5.styleTransfer('models/01-arbol-de-la-vida', video, modelLoaded);
-
-  styles[3] = ml5.styleTransfer('models/01-arbol-de-la-vida', video, modelLoaded);
-
-  styles[4] = ml5.styleTransfer('models/01-arbol-de-la-vida', video, modelLoaded);
-
-  styles[5] = ml5.styleTransfer('models/01-arbol-de-la-vida', video, modelLoaded);
-
-  styles[6] = ml5.styleTransfer('models/01-arbol-de-la-vida', video, modelLoaded);
-
-  styles[7] = ml5.styleTransfer('models/01-arbol-de-la-vida', video, modelLoaded);
-
-  styles[8] = ml5.styleTransfer('models/01-arbol-de-la-vida', video, modelLoaded);
+  // hide all pictures except for 0th:
+  for (let i = 1; i < images.length; i++) {
+    images[i].hidden = true;
+  }
 
   // Create a new Style Transfer method with a defined style.
   // We give the video as the second argument
@@ -65,10 +89,10 @@ function draw(){
 
 // A function to call when the model has been loaded.
 function modelLoaded() {
-  select('#status').html("Modelos cargados");
+  select('#status').html("Models loaded!");
 }
 
-// Start and stop the transfer process
+// start and stop the transfer process
 function startStop() {
   if (isTransferring) {
     select('#startStop').html('Start');
@@ -103,8 +127,17 @@ function keyPressed() {
   // substract 48 to retrieve number
   let numberKey = keyCode - 48;
   // check that key is a number
-  if (numberKey >= 1 && numberKey <=9) {
+  if (numberKey >= 1 && numberKey <=8) {
     // update currentModel
     currentModel = numberKey - 1;
+    //update image, hide all and only make one visible
+    for (let i = 0; i < images.length; i++) {
+      images[i].hidden = true;
+    }
+    images[currentModel].hidden = false;
+  }
+  // TODO: retrieve spacebar to toggle style transfer
+  if (keyCode == " ") {
+    console.log("yo space");
   }
 }
