@@ -43,8 +43,8 @@ let resultImg = null;
 
 let currentModel = 0;
 
-// variable for storing body
-let body = null;
+// variable for storing playground div element
+let playgroundDiv = null;
 
 // array for storing images
 let images = [];
@@ -52,7 +52,10 @@ let images = [];
 // p5.js function
 function setup() {
   // p5.js function to create canvas
-  createCanvas(320, 240).parent('canvasContainer');
+  let canvas = createCanvas(320, 240).parent('canvasContainer');
+  let x = (windowWidth - width) / 2;
+  let y = (windowHeight - height) / 2;
+  canvas.position(x, y);
 
   // create video capture from webcam
   video = createCapture(VIDEO);
@@ -65,7 +68,7 @@ function setup() {
   resultImg.hide();
 
   // The button to start and stop the transfer process
-  select('#startStop').mousePressed(startStop);
+  // select('#startStop').mousePressed(startStop);
 
   // load models
   for (let i = 0; i< stylesNames.length; i++) {
@@ -88,7 +91,7 @@ function setup() {
 
   // style = ml5.styleTransfer('models/02-contra-la-guerra', video, modelLoaded);
 
-  body = document.getElementById("body");
+  playgroundDiv = document.getElementById("playgroundDiv");
 
 }
 
@@ -105,15 +108,17 @@ function draw(){
 
 // A function to call when the model has been loaded.
 function modelLoaded() {
-  select('#status').html("Models loaded!");
+  // select('#status').html("Models loaded!");
+  console.log("models loaded!");
+  startStop();
 }
 
 // start and stop the transfer process
 function startStop() {
   if (isTransferring) {
-    select('#startStop').html('Start');
+    // select('#startStop').html('Start');
   } else {
-    select('#startStop').html('Stop');
+    // select('#startStop').html('Stop');
     // Make a transfer using the video
     styles[currentModel].transfer(gotResult);
   }
@@ -149,7 +154,7 @@ function keyPressed() {
 
     let auxText = "background-image:url(images/" + imagesOriginalNames[currentModel] + ".jpg)"
 
-    body.style = auxText;
+    playgroundDiv.style = auxText;
 
     //update image, hide all and only make one visible
     // for (let i = 0; i < images.length; i++) {
