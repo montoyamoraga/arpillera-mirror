@@ -1,23 +1,23 @@
-# weavingtocode
+# arpillera-mirror
 
 ## About
 
-## Textiles
+Arpillera Mirror (2019) is a piece by Aarón Montoya-Moraga.
 
-* Poncho, Peru, The Art Institute of Chicago
-https://www.artic.edu/artworks/152015/poncho
-saves as weaving-peru.jpg
+It was built using ml5.js, p5.js.
 
-* Chief's poncho, Chile
-https://www.artic.edu/artworks/25891/chief-s-poncho
 
-## Machine learning
+## Resources
 
 ml5.js
+
+
 https://github.com/ml5js/training-styletransfer
 
 Creating your own style transfer mirror
 https://blog.paperspace.com/creating-your-own-style-transfer-mirror/
+
+
 
 ## Arpilleras Violeta Parra
 
@@ -30,7 +30,6 @@ https://blog.paperspace.com/creating-your-own-style-transfer-mirror/
 * [https://museovioletaparra.cl/coleccion/afiche/](https://museovioletaparra.cl/coleccion/afiche/)
 * [https://museovioletaparra.cl/coleccion/el-circo/](https://museovioletaparra.cl/coleccion/el-circo/)
 * [https://museovioletaparra.cl/coleccion/el-hombre/](https://museovioletaparra.cl/coleccion/el-hombre/)
-
 
 ## License
 
