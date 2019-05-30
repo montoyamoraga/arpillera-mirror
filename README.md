@@ -2,22 +2,15 @@
 
 ## About
 
-Arpillera Mirror (2019) is a piece by Aarón Montoya-Moraga.
+Arpillera Mirror (2019) is a piece by [Aarón Montoya-Moraga](https://montoyamoraga.io/).
 
-It was built using ml5.js, p5.js.
+Arpillera Mirror was built using the JavaScript libraries [ml5.js](https://ml5js.org/), and [p5.js](http://p5js.org/).
 
+Arpillera Mirror is a piece inspired by [Gene Kogan](http://genekogan.com/)'s [Experiments on Style Transfer](http://genekogan.com/works/style-transfer/).
+
+The machine learning models were built using the tutorial [https://blog.paperspace.com/creating-your-own-style-transfer-mirror/](https://blog.paperspace.com/creating-your-own-style-transfer-mirror/)
 
 ## Resources
-
-ml5.js
-
-
-https://github.com/ml5js/training-styletransfer
-
-Creating your own style transfer mirror
-https://blog.paperspace.com/creating-your-own-style-transfer-mirror/
-
-
 
 ## Arpilleras Violeta Parra
 
