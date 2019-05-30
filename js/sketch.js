@@ -3,18 +3,13 @@
 let imagesPrefix = "images/";
 let imagesSuffix = ".jpg";
 
-// TODO: less duplicate variables
 let imagesOriginalNames = ["00-afiche", "01-arbol-de-la-vida",
                   "02-contra-la-guerra", "03-cristo-en-bikini",
                   "04-el-circo", "05-el-hombre",
                   "06-la-cantante-calva", "07-la-cueca",
                   "08-thiago-de-mello"];
 
-let imagesNames = ["00-afiche", "01-arbol-de-la-vida",
-                  "02-contra-la-guerra", "03-cristo-en-bikini",
-                  "04-el-circo", "05-el-hombre",
-                  "06-la-cantante-calva", "07-la-cueca",
-                  "08-thiago-de-mello"];
+let imagesNames = imagesOriginalNames.slice(0);
 
 // add prefix and suffix to image names
 for (let i = 0; i < imagesNames.length; i++) {
@@ -23,11 +18,7 @@ for (let i = 0; i < imagesNames.length; i++) {
 
 // variables for styles
 let stylesPrefix = "models/";
-let stylesNames = ["00-afiche", "01-arbol-de-la-vida",
-                  "02-contra-la-guerra", "03-cristo-en-bikini",
-                  "04-el-circo", "05-el-hombre",
-                  "06-la-cantante-calva", "07-la-cueca",
-                  "08-thiago-de-mello"];
+let stylesNames = imagesOriginalNames.slice(0);
 
 // add prefix  to model names
 for (let i = 0; i < stylesNames.length; i++) {

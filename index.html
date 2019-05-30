@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>Arpillera Mirror (2019)</title>
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
 
+    <meta charset="utf-8">
+
+    <title>Arpillera Mirror (2019)</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
 
     <style>
       body {
@@ -12,9 +14,11 @@
         padding: 0;
         margin: 0;
       }
+
       #playgroundDiv {
         height: 800px;
       }
+
       h1, h2, h3, h4, h5, h6, p {
         font-family: 'Inconsolata', monospace;
         text-align:center;
@@ -23,17 +27,16 @@
          margin-block-end: 0.3em;
       }
 
-
-
-      /* #preload-01 { background: url(http://domain.tld/image-01.png) no-repeat -9999px -9999px; }
-      #preload-02 { background: url(http://domain.tld/image-02.png) no-repeat -9999px -9999px; }
-      #preload-03 { background: url(http://domain.tld/image-03.png) no-repeat -9999px -9999px; } */
+      div#preloadImages {
+        display: none;
+      }
     </style>
 
     <script src="./libraries/p5.min.js"></script>
     <script src="./libraries/p5.dom.min.js"></script>
     <script src="./libraries/ml5.min.js"></script>
     <script src="./js/sketch.js"></script>
+
   </head>
 
   <body>
@@ -47,6 +50,18 @@
     <div id="playgroundDiv" style="background-image:url(images/00-afiche.jpg)">
       <div id="canvasContainer">
       </div>
+    </div>
+
+    <div id="preloadImages">
+      <img src="./images/00-afiche.jpg" />
+      <img src="./images/01-arbol-de-la-vida.jpg" />
+      <img src="./images/02-contra-la-guerra.jpg" />
+      <img src="./images/03-cristo-en-bikini.jpg" />
+      <img src="./images/04-el-circo.jpg" />
+      <img src="./images/05-el-hombre.jpg" />
+      <img src="./images/06-la-cantante-calva.jpg" />
+      <img src="./images/07-la-cueca.jpg" />
+      <img src="./images/08-thiago-de-mello.jpg" />
     </div>
 
   </body>
