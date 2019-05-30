@@ -47,8 +47,8 @@ function setup() {
   let canvas = createCanvas(640, 480).parent('canvasContainer');
 
   // center canvas
-  let x = (windowWidth - width) / 2;
-  let y = (windowHeight - height) / 2;
+  let x = 5 * (windowWidth - width) / 10;
+  let y = 6 * (windowHeight - height) / 10;
   canvas.position(x, y);
 
   // create video capture from webcam
