@@ -44,7 +44,7 @@ let images = [];
 function setup() {
 
   // p5.js function to create canvas
-  let canvas = createCanvas(320, 240).parent('canvasContainer');
+  let canvas = createCanvas(640, 480).parent('canvasContainer');
 
   // center canvas
   let x = (windowWidth - width) / 2;
@@ -78,9 +78,9 @@ function setup() {
 function draw(){
   // Switch between showing the raw camera or the style
   if (isTransferring) {
-    image(resultImg, 0, 0, 320, 240);
+    image(resultImg, 0, 0, 640, 480);
   } else {
-    image(video, 0, 0, 320, 240);
+    image(video, 0, 0, 640, 480);
   }
 }
 
